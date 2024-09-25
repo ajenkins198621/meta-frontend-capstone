@@ -1,3 +1,271 @@
+:root {
+	--color-dark-green: #495e57;
+	--color-yellow: #f4ce14;
+	--color-light: #edefee;
+	--color-orange: #ee9972;
+	--font-karla: "Karla", sans-serif;
+	--font-markazi: "Markazi Text", serif;
+}
+
+html {
+	font-size: 16px;
+}
+
+body {
+	font-family: var(--font-karla);
+}
+
+.container {
+	margin: 0 auto;
+	max-width: 100%;
+	padding: 0 1.25rem;
+}
+
+@media (min-width: 768px) {
+	.container {
+		width: 640px;
+	}
+}
+@media (min-width: 1024px) {
+	.container {
+		width: 960px;
+	}
+}
+
+header {
+	display: flex;
+	flex-direction: column;
+	padding: 1.25px 0;
+}
+
+@media (min-width: 768px) {
+	header {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+}
+
 header .logo {
 	width: 200px;
+}
+
+header nav ul {
+	display: flex;
+	flex-wrap: wrap;
+
+	gap: 2rem;
+	list-style: none;
+}
+
+header nav ul li a {
+	color: #333;
+	font-weight: 700;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+header nav ul li a:hover {
+	text-decoration: underline;
+}
+
+footer {
+	background-color: #dedede;
+	width: 100%;
+}
+footer .container {
+	display: flex;
+	justify-content: space-between;
+	padding: 1.25rem 0;
+}
+
+footer ul {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	list-style: none;
+}
+
+footer ul a {
+	color: #333;
+	text-decoration: none;
+}
+
+footer ul a:hover {
+	text-decoration: underline;
+}
+
+main {
+	margin-bottom: 2.5rem;
+}
+
+main .hero {
+	background-color: var(--color-dark-green);
+}
+
+main .hero {
+	padding: 1.25rem 0;
+}
+
+main .hero .container {
+	display: flex;
+	flex-direction: column;
+}
+
+@media (min-width: 768px) {
+	main .hero .container {
+		gap: 2rem;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	main .hero .container > div {
+		position: relative;
+		width: calc(50% - 2rem);
+	}
+}
+
+h2 {
+	color: var(--color-yellow);
+	font-family: var(--font-markazi);
+	font-size: 3.5rem;
+	margin: 0;
+}
+
+h3 {
+	color: var(--color-light);
+	font-family: var(--font-markazi);
+	font-size: 2rem;
+	margin: 0;
+}
+
+p {
+	margin: 0;
+}
+
+main .hero p {
+	color: var(--color-light);
+	font-size: 1.25rem;
+	line-height: 1.5;
+}
+
+main .hero .description {
+	display: flex;
+	flex-direction: column;
+	gap: 2.5rem;
+}
+
+button {
+	background-color: var(--color-yellow);
+	border: none;
+	border-radius: 0.75rem;
+	color: var(--color-dark-green);
+	cursor: pointer;
+	font-family: var(--font-karla);
+	font-size: 1.25rem;
+	font-weight: 700;
+	padding: 1rem 2rem;
+	width: fit-content;
+}
+
+button:hover {
+	background-color: #f7d700;
+}
+
+main .hero img {
+	position: absolute;
+	right: 0;
+}
+
+.specials .intro {
+	align-items: center;
+	display: flex;
+	margin-top: 6rem;
+	justify-content: space-between;
+}
+
+.specials .intro h2 {
+	color: var(--color-dark-green);
+	font-size: 3.5rem;
+	margin: 0;
+}
+
+.specials .specials-list {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	margin: 2rem auto;
+}
+
+@media (min-width: 1024px) {
+	.specials .specials-list {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+}
+
+.specials .specials-list .special {
+	background-color: var(--color-light);
+	border-radius: 1rem;
+	display: flex;
+	flex-direction: column;
+	margin: 0 0 2rem;
+	width: 100%;
+}
+
+@media (min-width: 768px) {
+	.specials .specials-list .special {
+		width: 320px;
+	}
+}
+
+@media (min-width: 1024px) {
+	.specials .specials-list .special {
+		margin-bottom: 0;
+		width: 290px;
+	}
+}
+
+.specials .specials-list .special img {
+	border-radius: 1rem 1rem 0 0;
+}
+
+.specials .specials-list .special .description {
+	padding: 1rem;
+}
+
+.specials .specials-list .special .description .title-row {
+	display: flex;
+	justify-content: space-between;
+	margin: 1rem 0 1.5rem 0;
+}
+
+.specials .specials-list .special .description .title-row span {
+	font-size: 1.5rem;
+	font-weight: 600;
+}
+
+.specials .specials-list .special .description .title-row span.price {
+	color: var(--color-orange);
+}
+
+.specials .specials-list .special .description {
+	font-size: 1rem;
+	line-height: 1.4s;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
+}
+
+.specials .specials-list .special .description a {
+	color: black;
+	display: flex;
+	font-weight: 600;
+	items-align: center;
+	gap: 0.5rem;
+	padding: 1rem 0 0;
+	text-decoration: none;
+}
+
+.specials .specials-list .special .description a:hover {
+	text-decoration: underline;
 }

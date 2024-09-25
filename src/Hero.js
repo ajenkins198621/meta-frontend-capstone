@@ -1,0 +1,24 @@
+import Button from "./Button";
+
+const Hero = () => {
+	return (
+		<div className="hero">
+			<div className="container">
+				<div className="description">
+					<h2>Little Lemon</h2>
+					<h3>Denver</h3>
+					<p>
+						We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.
+					</p>
+
+					<Button onClick={() => alert("Reserve a table!")}>Reserve a Table</Button>
+				</div>
+				<div>
+					<img src="/hero-pic.png" alt="Hero Pic" />
+				</div>
+			</div>
+		</div>
+	);
+};
+
+export default Hero;
