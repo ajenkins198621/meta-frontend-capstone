@@ -269,3 +269,68 @@ main .hero img {
 .specials .specials-list .special .description a:hover {
 	text-decoration: underline;
 }
+
+.testimonials {
+	background-color: var(--color-light);
+	padding: 2rem 0;
+	width: 100%;
+}
+
+.testimonials .testimonial-inner {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.testimonials .testimonial-inner h2 {
+	color: var(--color-dark-green);
+}
+
+.testimonials .testimonials-list {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 2rem;
+	margin-top: 2rem;
+	justify-content: center;
+}
+
+@media (min-width: 1024px) {
+	.testimonials .testimonials-list {
+		flex-wrap: nowrap;
+	}
+}
+
+.testimonials .testimonial {
+	background-color: white;
+	border-radius: 1rem;
+	padding: 1rem;
+	width: 200px;
+}
+
+.testimonials .testimonial img {
+	border-radius: 50%;
+	max-width: 60px;
+}
+
+.testimonials .testimonial .name-row {
+	display: flex;
+	gap: 0.5rem;
+	align-items: center;
+	margin-bottom: 1rem;
+}
+
+.testimonials .testimonial .name-row .name-column {
+	display: flex;
+	flex-direction: column;
+}
+
+.testimonials .testimonial .name-row .name-column .rating-row {
+	align-items: center;
+	display: flex;
+	margin-top: 0.25rem;
+}
+
+.testimonials .testimonial .comment {
+	text-transform: italic;
+}
