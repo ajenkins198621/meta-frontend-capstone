@@ -76,38 +76,97 @@ button:hover {
 /* ---------------------------------- */
 
 header {
+	align-items: center;
 	display: flex;
-	flex-direction: column;
+	justify-content: space-between;
 	padding: 1.25rem 0;
-}
-
-@media (min-width: 768px) {
-	header {
-		flex-direction: row;
-		justify-content: space-between;
-	}
 }
 
 header .logo {
 	width: 200px;
 }
 
-header nav ul {
+header button {
+	padding: 0;
+	background: none;
+}
+
+header button:hover {
+	background: none;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+	header .logo {
+		width: 130px;
+	}
+}
+
+/* ------------------------------------ */
+/* ------------- MAIN NAV ------------- */
+/* ------------------------------------ */
+
+.main-nav {
+	display: none;
+}
+.main-nav nav ul {
 	display: flex;
-	flex-wrap: wrap;
+	flex-direction: column;
 	gap: 2rem;
 	list-style: none;
 }
 
-header nav ul li a {
+.main-nav nav ul li a {
 	color: #333;
 	font-weight: 700;
 	text-decoration: none;
 	text-transform: uppercase;
 }
 
-header nav ul li a:hover {
+.main-nav nav ul li a:hover {
 	text-decoration: underline;
+}
+
+.hamburger-menu {
+	display: block;
+}
+
+@media (max-width: 767px) {
+	.main-nav.menu-open {
+		background-color: var(--color-light);
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		border-left: 1px solid rgba(0, 0, 0, 0.1);
+		border-right: 1px solid rgba(0, 0, 0, 0.1);
+		border-radius: 0 0 0 1rem;
+		display: block;
+		padding: 2rem;
+		position: absolute;
+		right: 0;
+		text-align: right;
+		transition: all 1s ease;
+		top: 0;
+	}
+}
+
+@media (min-width: 768px) {
+	.hamburger-menu {
+		display: none;
+	}
+
+	.main-nav {
+		display: block;
+		position: relative;
+	}
+
+	.main-nav nav ul {
+		flex-direction: row;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+	.main-nav nav ul {
+		font-size: 0.8rem;
+		gap: 1rem;
+	}
 }
 
 /* ---------------------------------- */
@@ -116,28 +175,67 @@ header nav ul li a:hover {
 
 footer {
 	background-color: #dedede;
+	color: var(--color-dark-green);
 	width: 100%;
 }
-footer .container {
+
+footer .footer-inner {
+	align-items: center;
 	display: flex;
+	flex-direction: column;
 	justify-content: space-between;
 	padding: 1.25rem 0;
 }
 
-footer ul {
+footer img {
+	display: inline;
+	max-height: 150px;
+}
+
+footer .footer-nav {
 	display: flex;
 	flex-direction: column;
 	gap: 0.5rem;
-	list-style: none;
+	text-align: center;
 }
 
-footer ul a {
-	color: #333;
+footer .footer-nav ul {
+	list-style: none;
+	padding: 0;
+}
+
+footer .footer-nav ul li {
+	padding: 0.5rem;
+}
+
+footer a {
+	color: var(--color-dark-green);
 	text-decoration: none;
 }
 
-footer ul a:hover {
+footer a:hover {
 	text-decoration: underline;
+}
+
+footer .address {
+	color: var(--color-dark-green);
+	margin-top: 1rem;
+	line-height: 2;
+	text-align: center;
+}
+
+@media (min-width: 768px) {
+	footer .footer-inner {
+		align-items: flex-start;
+		flex-direction: row;
+	}
+	footer img {
+		max-height: 200px;
+	}
+	footer .footer-nav ul {
+		flex-direction: row;
+		text-align: left;
+	}
 }
 
 /* ---------------------------------- */
@@ -154,44 +252,56 @@ main {
 
 .hero {
 	background-color: var(--color-dark-green);
-}
-
-.hero {
 	padding: 1.25rem 0;
 }
 
-.hero .container {
+.hero .hero-inner {
+	align-items: center;
 	display: flex;
 	flex-direction: column;
+	gap: 1.5rem;
+}
+
+.hero .description {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.hero .description p {
+	color: var(--color-light);
+	font-size: 1.25rem;
+	line-height: 1.5;
+	text-align: center;
 }
 
 @media (min-width: 768px) {
-	.hero .container {
+	.hero .hero-inner {
+		align-items: flex-start;
 		gap: 2rem;
 		flex-direction: row;
 		justify-content: space-between;
 	}
-	.hero .container > div {
+	.hero .hero-inner > div {
 		position: relative;
 		width: calc(50% - 2rem);
 	}
-}
 
-.hero p {
-	color: var(--color-light);
-	font-size: 1.25rem;
-	line-height: 1.5;
-}
+	.hero .description {
+		align-items: flex-start;
+	}
+	.hero .description p {
+		text-align: left;
+	}
+	.hero img {
+		position: absolute;
+		right: 0;
+	}
 
-.hero .description {
-	display: flex;
-	flex-direction: column;
-	gap: 2.5rem;
-}
-
-.hero img {
-	position: absolute;
-	right: 0;
+	.hero .description {
+		gap: 2.5rem;
+	}
 }
 
 /* ------------------------------------ */
