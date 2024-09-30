@@ -26,7 +26,9 @@ const Header = () => {
 	return (
 		<div className="container">
 			<header>
-				<img src="/Logo.svg" alt="Little Lemon logo" className="logo" />
+				<a href="/">
+					<img src="/Logo.svg" alt="Little Lemon logo" className="logo" />
+				</a>
 				<div ref={menuRef} className="hamburger-menu">
 					<HamburgerMenuIcon
 						onClick={() => {

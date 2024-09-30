@@ -54,7 +54,8 @@ p {
 	margin: 0;
 }
 
-button {
+button,
+.button {
 	background-color: var(--color-yellow);
 	border: none;
 	border-radius: 0.75rem;
@@ -64,10 +65,12 @@ button {
 	font-size: 1.25rem;
 	font-weight: 700;
 	padding: 1rem 2rem;
+	text-decoration: none;
 	width: fit-content;
 }
 
-button:hover {
+button:hover,
+.button:hover {
 	background-color: #f7d700;
 }
 
