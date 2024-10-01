@@ -24,7 +24,7 @@ const Testimonial = ({ rating, name, image, review }) => {
 
 const Testimonials = () => {
 	return (
-		<div className="testimonials">
+		<div className="testimonials" id="testimonials">
 			<div className="container">
 				<div className="testimonial-inner">
 					<h2>Testimonials</h2>

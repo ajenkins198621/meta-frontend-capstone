@@ -1,3 +1,5 @@
+import Nav from "./Nav";
+
 const Footer = () => {
 	return (
 		<footer>
@@ -7,28 +9,7 @@ const Footer = () => {
 						<img alt="Little Lemon Logo" src="/lemon-large.png" />
 					</div>
 					<div className="footer-nav">
-						<nav>
-							<ul>
-								<li>
-									<a href="/">Home</a>
-								</li>
-								<li>
-									<a href="/">About</a>
-								</li>
-								<li>
-									<a href="/">Menu</a>
-								</li>
-								<li>
-									<a href="/">Reservations</a>
-								</li>
-								<li>
-									<a href="/">Order Online</a>
-								</li>
-								<li>
-									<a href="/">Login</a>
-								</li>
-							</ul>
-						</nav>
+						<Nav />
 					</div>
 
 					<div className="address">

@@ -23,7 +23,7 @@ const Special = ({ imgSrc, title, price, description }) => {
 
 const Specials = () => {
 	return (
-		<div className="specials">
+		<div className="specials" id="specials">
 			<div className="container">
 				<div className="intro">
 					<h2>This Week's Specials</h2>

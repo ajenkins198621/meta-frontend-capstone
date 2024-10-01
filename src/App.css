@@ -13,10 +13,20 @@
 
 html {
 	font-size: 16px;
+	scroll-behavior: smooth;
 }
 
 body {
 	font-family: var(--font-karla);
+}
+
+#root {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+main {
+	flex: 1;
 }
 
 .container {
@@ -72,6 +82,11 @@ button,
 button:hover,
 .button:hover {
 	background-color: #f7d700;
+}
+
+button:disabled {
+	background-color: #ccc;
+	cursor: not-allowed;
 }
 
 /* ---------------------------------- */
@@ -506,5 +521,86 @@ main {
 @media (min-width: 1024px) {
 	.about .about-inner img {
 		max-width: 40%;
+	}
+}
+
+/* ---------------------------------- */
+/* ------------- BOOKING ------------ */
+/* ---------------------------------- */
+
+.booking {
+	align-items: center;
+	display: flex;
+	flex-direction: column-reverse;
+	gap: 3rem;
+}
+
+.booking-form {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	min-width: fit-content;
+}
+
+.booking .input-group {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.booking .input-group label {
+	font-weight: 600;
+}
+
+.booking .input-group select {
+	width: fit-content;
+	padding: 10px 20px;
+}
+
+.booking .input-group .button-selector {
+	align-items: center;
+	display: flex;
+	gap: 1rem;
+}
+
+.booking .input-group .button-selector button {
+	align-items: center;
+	border-radius: 50%;
+	color: white;
+	display: flex;
+	font-size: 1.5rem;
+	font-weight: 700;
+	height: 2.25rem !important;
+	justify-content: center;
+	padding: 0;
+	width: 2.25rem !important;
+}
+.booking .input-group .button-selector button:disabled {
+	background-color: #ccc;
+	cursor: not-allowed;
+}
+
+.booking .input-group .button-selector span {
+	font-size: 1.25rem;
+}
+
+.booking-image-container img {
+	border-radius: 1rem;
+	max-width: 200px;
+}
+
+@media (min-width: 768px) {
+	.booking {
+		align-items: flex-start;
+		flex-direction: row;
+	}
+
+	.booking-form {
+		align-items: flex-start;
+	}
+
+	.booking-image-container img {
+		max-width: 100%;
 	}
 }
