@@ -528,13 +528,6 @@ main {
 /* ------------- BOOKING ------------ */
 /* ---------------------------------- */
 
-.booking {
-	align-items: center;
-	display: flex;
-	flex-direction: column-reverse;
-	gap: 3rem;
-}
-
 .booking-form {
 	align-items: center;
 	display: flex;
@@ -543,64 +536,99 @@ main {
 	min-width: fit-content;
 }
 
-.booking .input-group {
-	display: flex;
-	flex-direction: column;
-	gap: 0.5rem;
-}
-
-.booking .input-group label {
-	font-weight: 600;
-}
-
-.booking .input-group select {
-	width: fit-content;
-	padding: 10px 20px;
-}
-
-.booking .input-group .button-selector {
+.booking {
 	align-items: center;
 	display: flex;
-	gap: 1rem;
-}
+	flex-direction: column-reverse;
+	gap: 3rem;
 
-.booking .input-group .button-selector button {
-	align-items: center;
-	border-radius: 50%;
-	color: white;
-	display: flex;
-	font-size: 1.5rem;
-	font-weight: 700;
-	height: 2.25rem !important;
-	justify-content: center;
-	padding: 0;
-	width: 2.25rem !important;
-}
-.booking .input-group .button-selector button:disabled {
-	background-color: #ccc;
-	cursor: not-allowed;
-}
+	.input-group {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
 
-.booking .input-group .button-selector span {
-	font-size: 1.25rem;
-}
+		label,
+		span {
+			font-weight: 600;
+		}
 
-.booking-image-container img {
-	border-radius: 1rem;
-	max-width: 200px;
+		select {
+			width: fit-content;
+			padding: 10px 20px;
+		}
+
+		.button-selector {
+			align-items: center;
+			display: flex;
+			gap: 1rem;
+
+			button {
+				align-items: center;
+				border-radius: 50%;
+				color: white;
+				display: flex;
+				font-size: 1.5rem;
+				font-weight: 700;
+				height: 2.25rem !important;
+				justify-content: center;
+				padding: 0;
+				width: 2.25rem !important;
+
+				&:disabled {
+					background-color: #ccc;
+					cursor: not-allowed;
+				}
+			}
+
+			span {
+				font-size: 1.25rem;
+			}
+
+			img {
+				border-radius: 1rem;
+				max-width: 200px;
+			}
+		}
+	}
 }
 
 @media (min-width: 768px) {
 	.booking {
 		align-items: flex-start;
 		flex-direction: row;
+		width: 100%;
 	}
 
 	.booking-form {
 		align-items: flex-start;
+		width: 50%;
+		min-width: 40%;
+	}
+
+	.booking-image-container {
+		width: 60%;
 	}
 
 	.booking-image-container img {
 		max-width: 100%;
+	}
+}
+
+.booking-slot-container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+
+.booking-slot {
+	display: inline;
+	padding: 3px 5px;
+	border-radius: 0;
+	font-size: 1rem;
+	font-weight: 600;
+
+	&.selected {
+		color: var(--color-light) !important;
+		background-color: var(--color-dark-green);
 	}
 }
