@@ -1,35 +1,24 @@
 import BookingSlot from "./BookingSlot";
 import { useReducer, useState } from "react";
-
-const initialTimes = [
-	"11:00 AM",
-	"12:00 PM",
-	"1:00 PM",
-	"2:00 PM",
-	"3:00 PM",
-	"4:00 PM",
-	"5:00 PM",
-	"6:00 PM",
-	"7:00 PM",
-	"8:00 PM",
-	"9:00 PM",
-	"10:00 PM",
-];
+import { fetchAPI, submitAPI } from "./api";
+import { useNavigate } from "react-router-dom";
 
 export const initializeTimes = () => {
-	return initialTimes;
+	return fetchAPI(new Date()); // fetch data from API
 };
 
 export const updateTimes = (state, action) => {
 	switch (action.type) {
 		case "UPDATE_TIMES":
-			return initialTimes;
+			return fetchAPI(new Date());
 		default:
 			return state;
 	}
 };
 
 const BookingForm = () => {
+	const navigate = useNavigate();
+
 	const [availableTimes, dispatchAvailableTimes] = useReducer(updateTimes, [], initializeTimes);
 
 	const [date, setDate] = useState("");
@@ -45,6 +34,19 @@ const BookingForm = () => {
 	};
 
 	const today = new Date();
+
+	const submitForm = () => {
+		const formData = {
+			date,
+			time,
+			numberGuests,
+			occasion,
+		};
+		const submission = submitAPI(formData);
+		if (submission) {
+			navigate("/booking/confirmation");
+		}
+	};
 
 	return (
 		<div className="booking-form">
@@ -119,7 +121,7 @@ const BookingForm = () => {
 					<option value={"Other"}>Other</option>
 				</select>
 			</div>
-			<button disabled={date === "" || time === "" || occasion === ""} onClick={() => alert("Reserve a table?")}>
+			<button disabled={date === "" || time === "" || occasion === ""} onClick={submitForm}>
 				Reserve Table
 			</button>
 		</div>

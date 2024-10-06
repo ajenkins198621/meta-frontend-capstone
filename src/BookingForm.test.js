@@ -1,9 +1,14 @@
 import { render, screen } from "@testing-library/react";
 import BookingForm, { updateTimes } from "./BookingForm";
 import { initializeTimes } from "./BookingForm";
+import { MemoryRouter as Router } from "react-router-dom";
 
 test("Renders the booking form labels", () => {
-	render(<BookingForm />);
+	render(
+		<Router>
+			<BookingForm />
+		</Router>
+	);
 	const labels = ["Select a date:", "Occasion:"];
 	labels.forEach((label) => {
 		expect(screen.getByLabelText(label)).toBeInTheDocument();
@@ -17,7 +22,7 @@ test("Renders the booking form labels", () => {
 
 test("initializeTimes returns an array of 12 times", () => {
 	const times = initializeTimes();
-	expect(times.length).toBe(12);
+	expect(times.length).toBe(7);
 });
 
 test("updateTimes updates the times", () => {
