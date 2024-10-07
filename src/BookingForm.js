@@ -22,9 +22,12 @@ const BookingForm = () => {
 	const [availableTimes, dispatchAvailableTimes] = useReducer(updateTimes, [], initializeTimes);
 
 	const [date, setDate] = useState("");
+	const [dateError, setDateError] = useState("");
 	const [time, setTime] = useState("");
+	const [timeError, setTimeError] = useState("");
 	const [numberGuests, setNumberGuests] = useState(2);
 	const [occasion, setOccasion] = useState("");
+	const [occasionError, setOccasionError] = useState("");
 
 	const formatDate = (date) => {
 		const day = date.getDate();
@@ -36,6 +39,15 @@ const BookingForm = () => {
 	const today = new Date();
 
 	const submitForm = () => {
+		setDateError(!date ? "Please select a date" : "");
+		setTimeError(!time ? "Please select a time" : "");
+		setOccasionError(!occasion ? "Please select an occasion" : "");
+		if (!occasion) {
+			setOccasionError("Please select an occasion");
+		}
+		if (!date || !time || !occasion) {
+			return;
+		}
 		const formData = {
 			date,
 			time,
@@ -52,7 +64,15 @@ const BookingForm = () => {
 		<div className="booking-form">
 			<div className="input-group">
 				<label htmlFor="date">Select a date:</label>
-				<select onChange={(e) => setDate(e.target.value)} value={date} id="date">
+				<select
+					onChange={(e) => {
+						setDate(e.target.value);
+						setDateError("");
+					}}
+					value={date}
+					id="date"
+					required={true}
+				>
 					<option value={""}>-- Please Select --</option>
 					{[...Array(30)].map((i, idx) => {
 						const date = new Date(today);
@@ -65,6 +85,7 @@ const BookingForm = () => {
 						);
 					})}
 				</select>
+				{dateError && <div className="error">{dateError}</div>}
 			</div>
 			<div className="input-group">
 				<span>Select a time:</span>
@@ -77,10 +98,12 @@ const BookingForm = () => {
 							value={t}
 							onClick={() => {
 								setTime(t);
+								setTimeError("");
 							}}
 						/>
 					))}
 				</div>
+				{timeError && <div className="error">{timeError}</div>}
 			</div>
 			<div className="input-group">
 				<span>Number of guests:</span>
@@ -112,7 +135,15 @@ const BookingForm = () => {
 			</div>
 			<div className="input-group">
 				<label htmlFor="occasion">Occasion:</label>
-				<select onChange={(e) => setOccasion(e.target.value)} value={occasion} id="occasion">
+				<select
+					onChange={(e) => {
+						setOccasion(e.target.value);
+						setOccasionError("");
+					}}
+					value={occasion}
+					id="occasion"
+					required={true}
+				>
 					<option value={""}>-- Please Select --</option>
 					<option value={"Birthday"}>Birthday</option>
 					<option value={"Anniversary"}>Anniversary</option>
@@ -120,10 +151,9 @@ const BookingForm = () => {
 					<option value={"Business"}>Business</option>
 					<option value={"Other"}>Other</option>
 				</select>
+				{occasionError && <div className="error">{occasionError}</div>}
 			</div>
-			<button disabled={date === "" || time === "" || occasion === ""} onClick={submitForm}>
-				Reserve Table
-			</button>
+			<button onClick={submitForm}>Reserve Table</button>
 		</div>
 	);
 };
