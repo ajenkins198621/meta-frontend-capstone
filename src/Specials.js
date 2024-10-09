@@ -13,7 +13,7 @@ const Special = ({ imgSrc, title, price, description }) => {
 					</div>
 					<p>{description}</p>
 				</div>
-				<a href="#">
+				<a href="#" aria-label={`Order a delivery for ${title}`}>
 					<span>Order a delivery</span> <DeliveryIcon />
 				</a>
 			</div>
@@ -25,7 +25,7 @@ const Specials = () => {
 	return (
 		<div className="specials" id="specials">
 			<div className="container">
-				<div className="intro">
+				<div className="intro" aria-labelledby="specials-heading">
 					<h2>This Week's Specials</h2>
 					<Button onClick={() => alert("Go to online menu")}>Online menu</Button>
 				</div>

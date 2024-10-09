@@ -24,10 +24,10 @@ const Testimonial = ({ rating, name, image, review }) => {
 
 const Testimonials = () => {
 	return (
-		<div className="testimonials" id="testimonials">
+		<div className="testimonials" id="testimonials" aria-labelledby="testimonials-heading">
 			<div className="container">
 				<div className="testimonial-inner">
-					<h2>Testimonials</h2>
+					<h2 id="testimonials-heading">Testimonials</h2>
 					<div className="testimonials-list">
 						<Testimonial
 							image="/emily-thompson.jpg"

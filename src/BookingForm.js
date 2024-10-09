@@ -72,6 +72,7 @@ const BookingForm = () => {
 					value={date}
 					id="date"
 					required={true}
+					aria-label="Date selection for booking"
 				>
 					<option value={""}>-- Please Select --</option>
 					{[...Array(30)].map((i, idx) => {
@@ -116,6 +117,7 @@ const BookingForm = () => {
 								return prev - 1;
 							});
 						}}
+						aria-label="Decrease number of guests"
 					>
 						-
 					</button>{" "}
@@ -128,6 +130,7 @@ const BookingForm = () => {
 								return prev + 1;
 							});
 						}}
+						aria-label="Increase number of guests"
 					>
 						+
 					</button>
@@ -143,6 +146,7 @@ const BookingForm = () => {
 					value={occasion}
 					id="occasion"
 					required={true}
+					aria-label="Select occasion for reservation"
 				>
 					<option value={""}>-- Please Select --</option>
 					<option value={"Birthday"}>Birthday</option>

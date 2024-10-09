@@ -12,7 +12,7 @@ const Hero = () => {
 							We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.
 						</p>
 
-						<Button asLink href="/booking">
+						<Button asLink href="/booking" aria-label="Reserve a table at Little Lemon">
 							Reserve a Table
 						</Button>
 					</div>

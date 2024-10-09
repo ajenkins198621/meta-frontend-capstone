@@ -27,16 +27,24 @@ const Footer = () => {
 							<strong>Socials:</strong>
 						</p>
 						<p>
-							<a href="facebook.com">Facebook</a>
+							<a href="facebook.com" aria-label="Visit Little Lemon Facebook page">
+								Facebook
+							</a>
 						</p>
 						<p>
-							<a href="twitter.com">Twitter</a>
+							<a href="twitter.com" aria-label="Visit Little Lemon Twitter page">
+								Twitter
+							</a>
 						</p>
 						<p>
-							<a href="instagram.com">Instagram</a>
+							<a href="instagram.com" aria-label="Visit Little Lemon Instagram page">
+								Instagram
+							</a>
 						</p>
 						<p>
-							<a href="pinterest.com">Pinterest</a>
+							<a href="pinterest.com" aria-label="Visit Little Lemon Pinterest page">
+								Pinterest
+							</a>
 						</p>
 					</div>
 				</div>
